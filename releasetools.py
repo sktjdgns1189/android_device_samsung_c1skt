@@ -1,5 +1,5 @@
-#
-# Copyright (C) 2012 The CyanogenMod Project
+# Copyright (C) 2012 The Android Open Source Project
+# Copyright (C) 2015 The Dokdo Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -14,5 +14,11 @@
 # limitations under the License.
 #
 
-PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/full_c1skt.mk
+"""Custom OTA commands for C1SKT devices"""
+
+def FullOTA_InstallEnd(info):
+  info.script.AppendExtra('mount("ext4", "EMMC", "/dev/block/mmcblk0p9", "/system", "");')
+  info.script.AppendExtra('set_metadata("/system/bin/check.sh", "uid", 0, "gid", 0, "mode", 0755);')
+  info.script.AppendExtra('run_program("/system/bin/check.sh");')
+  info.script.AppendExtra('delete("/system/bin/check.sh");')
+  info.script.AppendExtra('unmount("/system");')

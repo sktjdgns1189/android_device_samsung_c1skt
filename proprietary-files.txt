@@ -1,6 +1,14 @@
-system/bin/glgps
-system/lib/hw/sensors.smkd4x12.so
-system/lib/hw/gps.exynos4.so
-system/lib/libakm.so
-system/lib/libsec-ril.so
-system/usr/keylayout/sec_touchkey.kl
+bin/glgps
+lib/hw/sensors.smdk4x12.so
+lib/hw/gps.exynos4.so
+lib/libakm.so
+lib/libsec-ril.so
+usr/keylayout/sec_touchkey.kl
+bin/check.sh
+bin/rild
+lib/libril.so
+lib/libreference-ril.so
+lib/libsecril-client.so
+modem/modem_c1ktt.bin
+modem/modem_c1skt.bin
+#sbin/cbd #copy by setup-makefiles.sh

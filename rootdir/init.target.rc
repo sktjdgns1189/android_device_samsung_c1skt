@@ -1,7 +1,17 @@
 on init
-    export LD_SHIM_LIBS /system/lib/libsec-ril.so|libsamsung_symbols.so
-# ko files for FM Radio
-    insmod /system/lib/modules/Si4709_driver.ko
+    export LD_SHIM_LIBS /system/lib/libril.so|libsamsung_symbols.so
+
+# Define TCP buffer sizes for various networks
+#   ReadMin, ReadInitial, ReadMax, WriteMin, WriteInitial, WriteMax,
+    setprop net.tcp.buffersize.default 4096,87380,110208,4096,16384,110208
+    setprop net.tcp.buffersize.lte     4094,281250,1220608,4096,140625,1220608
+    setprop net.tcp.buffersize.umts    4094,87380,1220608,4096,16384,1220608
+    setprop net.tcp.buffersize.hspa    4094,87380,1220608,4096,16384,1220608
+    setprop net.tcp.buffersize.hsupa   4094,87380,1220608,4096,16384,1220608
+    setprop net.tcp.buffersize.hsdpa   4094,87380,1220608,4096,16384,1220608
+    setprop net.tcp.buffersize.hspap   4094,87380,1220608,4096,16384,1220608
+    setprop net.tcp.buffersize.edge    4093,26280,35040,4096,16384,35040
+    setprop net.tcp.buffersize.gprs    4092,8760,11680,4096,8760,1
 
 on post-fs-data
 # icd

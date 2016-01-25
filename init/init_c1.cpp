@@ -45,22 +45,27 @@ void init_sec_properties()
 
     property_get("ro.bootloader", bootloader);
 
-    if (strstr(bootloader, "M440S")) {
-        /* m0skt */
-        property_set("ro.build.fingerprint", "samsung/m0skt/m0skt:4.3/JSS15J/M440SKSUGND1:user/release-keys");
-        property_set("ro.build.description", "m0skt-user 4.3 JSS15J M440SKSUGND1 release-keys");
-        property_set("ro.product.model", "SHW-M440S");
-        property_set("ro.product.device", "m0skt");
+    if (strstr(bootloader, "E210K")) {
+        /* c1ktt */
+        property_set("ro.build.fingerprint", "samsung/c1ktt/c1ktt:4.4.4/KTU84P/E210KKTUKOB1:user/release-keys");
+        property_set("ro.build.description", "c1ktt-user 4.4.4 KTU84P E210KKTUKOB1 release-keys");
+        property_set("ro.product.model", "SHV-E210K");
+        property_set("ro.product.device", "c1ktt");
+    } else if (strstr(bootloader, "E210L")) {
+        /* c1lgt */
+        property_set("ro.build.fingerprint", "samsung/c1lgt/c1lgt:4.4.4/KTU84P/E210LKLUKOB1:user/release-keys");
+        property_set("ro.build.description", "c1lgt-user 4.4.4 KTU84P E210LKLUKOB1 release-keys");
+        property_set("ro.product.model", "SHV-E210L");
+        property_set("ro.product.device", "c1lgt");
     } else {
-        /* m0 */
-        property_set("ro.build.fingerprint", "samsung/m0xx/m0:4.3/JSS15J/I9300XXUGND5:user/release-keys");
-        property_set("ro.build.description", "m0xx-user 4.3 JSS15J I9300XXUGND5 release-keys");
-        property_set("ro.product.model", "GT-I9300");
-        property_set("ro.product.device", "m0");
+        /* c1skt */
+        property_set("ro.build.fingerprint", "samsung/c1skt/c1skt:4.4.4/KTU84P/E210SKSUKNI3:user/release-keys");
+        property_set("ro.build.description", "c1skt-user 4.4.4 KTU84P E210SKSUKNI3 release-keys");
+        property_set("ro.product.model", "SHV-E210S");
+        property_set("ro.product.device", "c1skt");
     }
 
     property_get("ro.product.device", device);
     strlcpy(devicename, device, sizeof(devicename));
     ERROR("Found bootloader id %s setting build properties for %s device\n", bootloader, devicename);
 }
-

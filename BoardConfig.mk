@@ -21,17 +21,20 @@
 
 # Init
 TARGET_INIT_VENDOR_LIB := libinit_sec
-TARGET_LIBINIT_DEFINES_FILE := device/samsung/i9300/init/init_m0xx.cpp
+TARGET_LIBINIT_DEFINES_FILE := device/samsung/c1skt/init/init_c1.cpp
 TARGET_UNIFIED_DEVICE := true
+
+TARGET_RELEASETOOLS_EXTENSIONS := device/samsung/c1skt
 
 # Bionic
 MALLOC_IMPL := dlmalloc
 
 # RIL
-BOARD_PROVIDES_LIBRIL := true
-BOARD_MODEM_TYPE := xmm6262
-TARGET_SPECIFIC_HEADER_PATH := device/samsung/i9300/include
+#BOARD_PROVIDES_LIBRIL := true
+#BOARD_MODEM_TYPE := cmc221
+TARGET_SPECIFIC_HEADER_PATH := device/samsung/c1skt/include
 COMMON_GLOBAL_CFLAGS += -DDISABLE_ASHMEM_TRACKING
+BOARD_MOBILEDATA_INTERFACE_NAME := "rmnet0"
 
 # Graphics
 TARGET_REQUIRES_SYNCHRONOUS_SETSURFACE := true
@@ -40,23 +43,23 @@ TARGET_REQUIRES_SYNCHRONOUS_SETSURFACE := true
 BOARD_USES_OPENSOURCE_SENSORS := false
 
 # Bluetooth
-BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := device/samsung/i9300/bluetooth
+BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := device/samsung/c1skt/bluetooth
 
 # Kernel
 TARGET_KERNEL_SOURCE := kernel/samsung/smdk4412
-TARGET_KERNEL_CONFIG := cyanogenmod_i9300_defconfig
-BOARD_RIL_CLASS := ../../../device/samsung/i9300/ril
+TARGET_KERNEL_CONFIG := cyanogenmod_c1skt_defconfig
+BOARD_RIL_CLASS := ../../../device/samsung/c1skt/ril
 
 # Recovery
-TARGET_RECOVERY_FSTAB := device/samsung/i9300/rootdir/fstab.smdk4x12
+TARGET_RECOVERY_FSTAB := device/samsung/c1skt/rootdir/fstab.smdk4x12
 RECOVERY_FSTAB_VERSION := 2
 
 # Selinux
 BOARD_SEPOLICY_DIRS += \
-    device/samsung/i9300/selinux
+    device/samsung/c1skt/selinux
 
 # assert
-TARGET_OTA_ASSERT_DEVICE := m0,m0xx,m0skt,i9300,GT-I9300,m440s,SHW-M440S
+TARGET_OTA_ASSERT_DEVICE := c1,c1skt,c1ktt,c1lgt,SHV-E210S,SHV-E210K,SHV-E210L,e210s,e210k,e210l,m0,m0xx,i9300
 
 # inherit from the proprietary version
--include vendor/samsung/i9300/BoardConfigVendor.mk
+-include vendor/samsung/c1skt/BoardConfigVendor.mk
