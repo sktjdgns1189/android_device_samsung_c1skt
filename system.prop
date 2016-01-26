@@ -13,9 +13,6 @@ ro.ril.hsxpa=1
 ro.ril.gprsclass=10
 ro.telephony.default_network=9
 
-# Use CDMALTE Phone
-telephony.lteOnCdmaDevice=0
-
 # For sys info indication
 persist.radio.add_power_save=1
 
