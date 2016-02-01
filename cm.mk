@@ -15,5 +15,5 @@ $(call inherit-product, device/samsung/c1skt/full_c1skt.mk)
 PRODUCT_DEVICE := c1skt
 PRODUCT_NAME := cm_c1skt
 PRODUCT_BRAND := samsung
-PRODUCT_MODEL := GT-c1skt
+PRODUCT_MODEL := SHV-E210S
 PRODUCT_MANUFACTURER := samsung
